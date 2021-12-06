@@ -233,6 +233,7 @@ const ContactList = () => {
                     key={contact.id}
                     id={contact.id}
                     selectContact={selectContact}
+                    token={token}
                   />
                 )
               })}
