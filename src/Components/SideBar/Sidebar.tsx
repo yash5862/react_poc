@@ -68,7 +68,7 @@ const Sidebar = ({ token, ContactCount }: any) => {
     }
   };
 
-  const handleMessageSent = (e: any) => {};
+  const handleMessageSent = (e: any) => { };
 
   return (
     <div className="col-3 p-4 shadow h-100 bg-light Sidebar_Container">
@@ -93,11 +93,13 @@ const Sidebar = ({ token, ContactCount }: any) => {
         <div className="input-group-container">
           <input
             placeholder="Max"
+            type="number"
             name="maxMessagesSent"
             onChange={handleMessageSent}
           />
           <input
             placeholder="Min"
+            type="number"
             name="minMessagesSent"
             onChange={handleMessageSent}
           />
@@ -106,8 +108,8 @@ const Sidebar = ({ token, ContactCount }: any) => {
       <div>
         <div className="SubHeading_Bold">Message Received:</div>
         <div className="input-group-container">
-          <input placeholder="Max" />
-          <input placeholder="Min" />
+          <input placeholder="Max" type="number" />
+          <input placeholder="Min" type="number" />
         </div>
       </div>
 

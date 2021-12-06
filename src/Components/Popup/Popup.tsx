@@ -13,11 +13,11 @@ const Popup = ({ isOpen, hideModal }: any) => {
     }
   };
 
-  const removeKeywordHandler = (value) => {
+  const removeKeywordHandler = (value: any) => {
     var index = allKeyWords.indexOf(value);
     if (index !== -1) {
       allKeyWords.splice(index, 1);
-      return setAllKeyWords([...allKeyWords]);
+      setAllKeyWords([...allKeyWords]);
     }
   };
   return (
@@ -42,7 +42,7 @@ const Popup = ({ isOpen, hideModal }: any) => {
             </div>
           </div>
           <div className="Tags-list-container">
-            {allKeyWords.map((value, index) => {
+            {allKeyWords.map((value: any, index: number) => {
               return (
                 <div
                   key={"keyword" + index}
