@@ -184,7 +184,7 @@ const ContactList = () => {
 
   return (
     <div className='row main-container-div'>
-      <Sidebar token={token} />
+      <Sidebar ContactCount={contactData?.contacts?.length} token={token}/>
       <div className='col-9 contact-list-container p-4'>
         <div>
           <div className='d-flex align-items-center justify-content-between'>
@@ -223,7 +223,7 @@ const ContactList = () => {
               dataLength={contactData.contacts.length || 20} //This is important field to render the next data
               next={getPaginationData}
               hasMore={true}
-              loader={<h4>Loading...</h4>}
+              loader={<h4 style={{ textAlign:"center", color:"#09a391"}}>Loading...</h4>}
               scrollableTarget='scrollableDiv'
             >
               {contactData.contacts.map((contact: IContact) => {
