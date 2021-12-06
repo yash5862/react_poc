@@ -1,30 +1,27 @@
-import React from "react";
-import "./TagHandler.css";
-import Delete from "../../assets/delete.svg";
-import "./TagHandler.css";
+import React from 'react'
+import './TagHandler.css'
+import Delete from '../../assets/delete.svg'
+
 interface props {
-  tagList: Array<String>;
+  tagList: Array<String>
+  handleDeleteTag: (tagName: String) => void
 }
 
-const TagHandler = ({ tagList }: props) => {
+const TagHandler = ({ tagList, handleDeleteTag }: props) => {
+
   return (
-    <div className="TagHandler-Container">
-      <ul id="tag-list">
-        {tagList?.map((value, index) => {
+    <div className='TagHandler-Container'>
+      <ul id='tag-list'>
+        {tagList && tagList.length ? tagList?.map((item: any, index: number) => {
           return (
             <li key={index}>
-              {value}{" "}
-              <img src={Delete} className="Delete_icon" alt="contact Img" />
-              <div className="checkbox">
-                <input type="checkbox" id={`checkboxTagSelection${index}`} name="" />
-                <label htmlFor={`checkboxTagSelection${index}`}></label>
-              </div>
+              {item?.name} <img src={Delete} className='Delete_icon' alt="contact Img" onClick={() => handleDeleteTag(item.name)} />
             </li>
-          );
-        })}
+          )
+        }) : <div>...Loding</div>}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default TagHandler;
+export default TagHandler

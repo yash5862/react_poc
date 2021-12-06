@@ -11,7 +11,6 @@ const ContactList = () => {
   const [token, setToken]: any = useState()
   const [contactData, setContactData]: any = useState({ contacts: [] });
   const [selectAll, setSelectAll]: any = useState(false)
-  const [tageData, setTageData]: any = useState({})
 
   useEffect(() => {
     getToken()
@@ -31,7 +30,6 @@ const ContactList = () => {
               setToken(result.data.access_token)
               const token = result.data.access_token
               getContacts(token)
-              getTagData(token)
             }
           },
           error => {
@@ -128,7 +126,6 @@ const ContactList = () => {
 
   //this is on react infinite scroll function all set for infinite scroll
   const getPaginationData = async () => {
-    console.log('Called_Page')
 
     if (token && contactData.nextPage) {
       try {
@@ -185,36 +182,9 @@ const ContactList = () => {
     setContactData({ contacts: copyData, nextPage: contactData.nextPage });
   }
 
-  const getTagData = async (token: String) => {
-    if (token) {
-      try {
-        await axios
-          .get(`https://api-im.chatdaddy.tech/tags`, {
-            headers: {
-              authorization: `Bearer ${token}`
-              // 'Content-Type': 'application/json'
-            }
-          })
-          .then(
-            response => {
-              const result = response
-              if (result.status === 200) {
-                setTageData(result.data)
-              }
-            },
-            error => {
-              console.log('error', error)
-            }
-          )
-      } catch (e) {
-        console.log('error', e)
-      }
-    }
-  }
-
   return (
     <div className='row main-container-div'>
-      <Sidebar />
+      <Sidebar token={token} />
       <div className='col-9 contact-list-container p-4'>
         <div>
           <div className='d-flex align-items-center justify-content-between'>
@@ -263,7 +233,6 @@ const ContactList = () => {
                     key={contact.id}
                     id={contact.id}
                     selectContact={selectContact}
-                    token={token}
                   />
                 )
               })}

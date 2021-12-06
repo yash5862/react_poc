@@ -4,9 +4,8 @@ interface props {
   contact: IContact
   id: number
   selectContact: (contactId: number) => void
-  token: String
 }
-const ContactComp = ({ contact, id, selectContact, token }: props) => {
+const ContactComp = ({ contact, id, selectContact }: props) => {
 
   return (
     <div className='Contact-Children-container'>
@@ -34,10 +33,10 @@ const ContactComp = ({ contact, id, selectContact, token }: props) => {
         </div>
       </div>
       <div className='Tag-list-container'>
-        {contact?.tags?.map((TagValue: any, index: any) => {
+        {contact?.tags?.map((Tag: any, index: number) => {
           return (
             <div className='Tag-container' key={index}>
-              {TagValue.name}
+              {Tag?.name}
             </div>
           )
         })}

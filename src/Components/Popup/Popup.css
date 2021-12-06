@@ -1,0 +1,54 @@
+.keywords-input-Container {
+  position: relative;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Popup_Input {
+  padding: 15px;
+  outline: none;
+  border: none;
+  margin: 0px 5px;
+  background-color: #f3f5f9;
+  color: #151837;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.add-Container-model {
+  background-color: #09a391 !important;
+  color: #fff !important;
+  font-size: 40px !important;
+  font-weight: bold;
+  width: 65px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin-left: 15px;
+}
+
+.Tags-list-container {
+  flex-wrap: wrap;
+  display: flex;
+  margin: 10px 0px;
+}
+.Tags-list-container div {
+  background-color: #09a391 !important;
+  padding: 10px 20px;
+  margin: 5px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Tags-list-container div img {
+  width: 20px;
+  margin-left: 5px;
+}
