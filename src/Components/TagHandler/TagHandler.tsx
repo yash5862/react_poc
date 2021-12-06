@@ -18,7 +18,7 @@ const TagHandler = ({ tagList, handleDeleteTag }: props) => {
               {item?.name} <img src={Delete} className='Delete_icon' alt="contact Img" onClick={() => handleDeleteTag(item.name)} />
             </li>
           )
-        }) : null}
+        }) : <div>...Loding</div>}
       </ul>
     </div>
   )

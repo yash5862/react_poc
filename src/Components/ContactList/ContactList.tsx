@@ -126,7 +126,6 @@ const ContactList = () => {
 
   //this is on react infinite scroll function all set for infinite scroll
   const getPaginationData = async () => {
-    console.log('Called_Page')
 
     if (token && contactData.nextPage) {
       try {
@@ -182,33 +181,6 @@ const ContactList = () => {
     });
     setContactData({ contacts: copyData, nextPage: contactData.nextPage });
   }
-
-  // const getTagData = async (token: String) => {
-  //   if (token) {
-  //     try {
-  //       await axios
-  //         .get(`https://api-im.chatdaddy.tech/tags`, {
-  //           headers: {
-  //             authorization: `Bearer ${token}`
-  //             // 'Content-Type': 'application/json'
-  //           }
-  //         })
-  //         .then(
-  //           response => {
-  //             const result = response
-  //             if (result.status === 200) {
-  //               setTageData(result.data.tags)
-  //             }
-  //           },
-  //           error => {
-  //             console.log('error', error)
-  //           }
-  //         )
-  //     } catch (e) {
-  //       console.log('error', e)
-  //     }
-  //   }
-  // }
 
   return (
     <div className='row main-container-div'>

@@ -49,7 +49,6 @@ const Sidebar = ({ token }: any) => {
               authorization: `Bearer ${token}`
               // 'Content-Type': 'application/json'
             }
-            
           })
           .then(
             response => {
@@ -67,7 +66,12 @@ const Sidebar = ({ token }: any) => {
     }
   }
 
-  const includeTagList: any = [{ name: 'Greeting1' }, { name: 'Greeting2' }, { name: 'Greeting3' }, { name: 'Greeting4' }]
+
+  const handleMessageSent = (e: any) => {
+    
+  }
+
+
   return (
     <div className='col-3 p-4 shadow h-100 bg-light Sidebar_Container'>
       <div className='Sidebar_Header'>
@@ -83,14 +87,14 @@ const Sidebar = ({ token }: any) => {
 
       <div>
         <div className='SubHeading_Bold'>Exclude Tags:</div>
-        <TagHandler tagList={includeTagList} handleDeleteTag={handleDeleteTag} />
+        <TagHandler tagList={tageData} handleDeleteTag={handleDeleteTag} />
       </div>
 
       <div>
         <div className='SubHeading_Bold'>Message Sent:</div>
         <div className='input-group-container'>
-          <input placeholder='Max' />
-          <input placeholder='Min' />
+          <input placeholder='Max' name="maxMessagesSent" onChange={handleMessageSent} />
+          <input placeholder='Min' name="minMessagesSent" onChange={handleMessageSent} />
         </div>
       </div>
       <div>
